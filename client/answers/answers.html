@@ -1,0 +1,6 @@
+<template name="answers">
+    {{#if currentUser}}
+    <h3>Answers</h3>
+    {{#each surveysAnswers}} {{> surveyAnswersListing}} {{/each}}
+    {{/if}}
+</template>

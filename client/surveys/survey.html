@@ -1,0 +1,22 @@
+<template name="survey">
+    <div class='row'>
+        <div class='col-md-3'>
+        </div>
+        <div class='col-md-6 survey-title-container'>
+            <div class='survey-title'>{{title}}</div>
+            <div class='survey-subtitle'>{{subtitle}}</div>
+        </div>
+    </div>
+    {{#each questions}} {{> question}} {{/each}}
+
+
+    <div class='row survey-button'>
+        <div class='col-md-3'>
+        </div>
+        <div class='col-md-6 '>
+            <button id='submit' class='btn btn-block btn-lg btn-primary'>
+                {{#if langEN}}Submit{{else}}Envoyer{{/if}}
+            </button>
+        </div>
+    </div>
+</template>

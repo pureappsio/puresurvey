@@ -1,0 +1,16 @@
+<template name="answersQuestion">
+    <div class='row'>
+        <div class='col-md-3 answer-question'>
+            {{title}}
+        </div>
+        {{#if noElements}}
+         <div class='col-md-3'>
+            <a href='/answers/{{surveyId}}/{{_id}}'>Check answers</a>
+        </div>
+        {{/if}}
+    </div>
+    
+    {{#each elements}} {{> answersElement}} {{/each}}
+   
+    
+</template>

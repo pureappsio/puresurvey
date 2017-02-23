@@ -1,0 +1,28 @@
+<template name="questionListing">
+    <div class='row'>
+        <div class='col-md-1'>
+            {{order}}
+        </div>
+        <div class='col-md-3'>
+            {{title}}
+        </div>
+        <div class='col-md-3'>
+            {{type}}
+        </div>
+         <div class='col-md-1'>
+            <button class='btn btn-danger delete'>X</button>
+        </div>
+    </div>
+    {{#if hasElements}}
+     <div class='row'>
+        <div class='col-md-1'></div>
+        <div class='col-md-3'>
+            <input class='form-control' id='element-title-{{_id}}'>
+        </div>
+         <div class='col-md-3'>
+            <button class='add-element btn btn-primary'>Add Element</button>
+        </div>
+    </div>
+    {{/if}}
+    {{#each elements}} {{> elementListing}} {{/each}}
+</template>

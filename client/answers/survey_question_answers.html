@@ -1,0 +1,14 @@
+<template name="surveyQuestionAnswers">
+    {{#each answer in answers}} 
+
+    <div class='row answer-row'>
+        <div class='col-md-3'>
+           
+        </div>
+        <div class='col-md-6 answer-col'>
+            {{{answer.value}}}
+        </div>
+    </div>
+
+    {{/each}}
+</template>

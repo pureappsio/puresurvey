@@ -1,0 +1,20 @@
+<template name="question">
+    <div class='row question-row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-6'>
+            <div class='question-title'>{{title}}</div>
+
+            {{#if isType 'long'}}
+            	<div id='answer-{{_id}}' class='summernote'></div>
+            {{/if}}
+
+            {{#if isType 'short'}}
+            	<input id='answer-{{_id}}' class='form-control'>
+            {{/if}}
+
+            {{#if isType 'choices'}}
+            	{{#each elements}} {{> element}} {{/each}}
+            {{/if}}
+        </div>
+    </div>
+</template>

@@ -1,0 +1,56 @@
+/* CSS declarations go here */
+
+.row {
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.answer-col {
+  border-bottom: 1px solid lightgray;
+}
+
+/*.answer-row {
+  padding: 25px;
+}*/
+
+.answer-question {
+    font-weight: bold;
+}
+
+.survey-title-container {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.survey-thank-you {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.survey-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.survey-subtitle {
+    font-size: 24px;
+}
+
+body {
+    font-size: 20px;
+}
+
+.question-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.question-row {
+    margin-top: 25px;
+}
+
+.survey-button {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}

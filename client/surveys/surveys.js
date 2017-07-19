@@ -12,7 +12,8 @@ Template.surveys.events({
 
     	Meteor.call('createSurvey', {
     		name: $('#survey-name').val(),
-    		userId: Meteor.user()._id
+    		userId: Meteor.user()._id,
+    		type: $('#survey-type :selected').val()
     	});
 
     }

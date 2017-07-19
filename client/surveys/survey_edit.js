@@ -2,20 +2,27 @@ Template.surveyEdit.events({
 
     'click #add-question': function() {
 
-    	Meteor.call('addQuestion', {
-    		title: $('#question-title').val(),
-    		type: $('#question-type :selected').val(),
-    		surveyId: this._id,
-    		userId: Meteor.user()._id
-    	});
+        Meteor.call('addQuestion', {
+            title: $('#question-title').val(),
+            type: $('#question-type :selected').val(),
+            surveyId: this._id,
+            userId: Meteor.user()._id
+        });
 
     },
     'click #edit-survey': function() {
-        var title = $('#survey-title').val();
-        var subtitle = $('#survey-subtitle').val();
-        var language = $('#survey-language').val();
 
-        Meteor.call('editSurvey', title, subtitle, language, this._id)
+        surveyData = {
+            _id: this._id,
+            name: this.name,
+            userId: this.userId,
+            title: $('#survey-title').val(),
+            subtitle: $('#survey-subtitle').val(),
+            language: $('#survey-language').val(),
+            type: $('#survey-type :selected').val()
+        }
+
+        Meteor.call('editSurvey', surveyData);
 
     }
 
@@ -24,7 +31,15 @@ Template.surveyEdit.events({
 Template.surveyEdit.helpers({
 
     questions: function() {
-    	return Questions.find({surveyId: this._id});
+        return Questions.find({ surveyId: this._id });
+    }
+
+});
+
+Template.surveyEdit.onRendered(function() {
+
+    if (this.data) {
+        $('#survey-type').val(this.data.type);
     }
 
 });

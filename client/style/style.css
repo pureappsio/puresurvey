@@ -1,5 +1,9 @@
 /* CSS declarations go here */
 
+.voffset50 {
+    margin-top: 50px !important;
+}
+
 .row {
     margin-top: 5px;
     vertical-align: middle;
@@ -7,6 +11,10 @@
 
 .answer-col {
   border-bottom: 1px solid lightgray;
+}
+
+.voffset15 {
+    margin-top: 15px;
 }
 
 /*.answer-row {

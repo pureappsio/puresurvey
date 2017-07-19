@@ -1,6 +1,8 @@
 <template name="surveyAnswers">
-   <h3>Results for {{name}}</h3>
+    <h3>Results for {{name}}</h3>
+    {{#each questions}} {{> answersQuestion}} {{/each}}
 
-   {{#each questions}} {{> answersQuestion}} {{/each}}
-
+    <div class="row voffset50">
+    	<div class='col-md-4'><a href='/answers/{{_id}}/all'>Check All Answers</a></div>
+    </div>
 </template>

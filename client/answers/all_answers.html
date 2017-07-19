@@ -1,0 +1,10 @@
+<template name="allAnswers">
+    {{#if currentUser}}
+    <h3>All Answers for {{name}}</h3> {{#each answers}} {{> answer}} {{/each}}
+    <div class='row'>
+        <div class='col-md-3'>
+            <a href='/answers/{{_id}}' class="btn btn-block btn-default">Come Back</a>
+        </div>
+    </div>
+    {{/if}}
+</template>

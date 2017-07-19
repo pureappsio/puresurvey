@@ -4,11 +4,17 @@
     <div class='row'>
         <div class='col-md-3'>
             <input id='survey-name' class='form-control'>
-            </div>
+        </div>
+        <div class='col-md-3'>
+            <select id='survey-type' class='form-control'>
+                <option value='feedback'>Product feedback</option>
+                <option value='notbought'>Didn't Buy</option>
+                <option value='survey'>General Survey</option>
+            </select>
+        </div>
         <div class='col-md-3'>
             <button id='create-survey' class='btn btn-block btn-primary'>Create Survey</button>
         </div>
     </div>
-    {{#each surveys}} {{> surveyListing}} {{/each}}
-    {{/if}}
+    {{#each surveys}} {{> surveyListing}} {{/each}} {{/if}}
 </template>

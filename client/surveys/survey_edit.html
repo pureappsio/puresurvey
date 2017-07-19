@@ -1,24 +1,36 @@
 <template name="surveyEdit">
     <h3>Editing {{name}}</h3>
-
     <div class='row'>
         <div class='col-md-3'>
+            <label>Survey Title</label>
             <input id='survey-title' class='form-control' placeholder="Title ..." value="{{title}}">
         </div>
-         <div class='col-md-3'>
+        <div class='col-md-3'>
+            <label>Survey Subtitle</label>
             <input id='survey-subtitle' class='form-control' placeholder="Subtitle ..." value="{{subtitle}}">
         </div>
-         <div class='col-md-2'>
+        <div class='col-md-3'>
+            <label>Survey Type</label>
+            <select id='survey-type' class='form-control'>
+                <option value='feedback'>Product feedback</option>
+                <option value='notbought'>Didn't Buy</option>
+                <option value='survey'>General Survey</option>
+            </select>
+        </div>
+        <div class='col-md-3'>
+            <label>Survey Language</label>
             <input id='survey-language' class='form-control' placeholder="Language ..." value="{{language}}">
         </div>
-        <div class='col-md-2'>
+    </div>
+    <div class='row voffset15'>
+        <div class='col-md-3'></div>
+        <div class='col-md-3'>
             <button id='edit-survey' class='btn btn-block btn-primary'>Edit Survey</button>
         </div>
-        <div class='col-md-2'>
+        <div class='col-md-3'>
             <a href='/surveys/{{_id}}' class='btn btn-warning btn-block'>Get Link</a>
         </div>
     </div>
-
     <h3>Questions</h3>
     <div class='row'>
         <div class='col-md-3'>
@@ -26,16 +38,15 @@
         </div>
         <div class='col-md-3'>
             <select id='question-type' class='form-control'>
-            	<option value='long'>Long text</option>
-            	<option value='short'>Short text</option>
-            	<option value='choices'>Multiple choices</option>
-            	<option value='checkboxes'>Checkboxes</option>
+                <option value='long'>Long text</option>
+                <option value='short'>Short text</option>
+                <option value='choices'>Multiple choices</option>
+                <option value='checkboxes'>Checkboxes</option>
             </select>
         </div>
         <div class='col-md-3'>
             <button id='add-question' class='btn btn-block btn-primary'>Add Question</button>
         </div>
-      
     </div>
     {{#each questions}} {{> questionListing}} {{/each}}
 </template>

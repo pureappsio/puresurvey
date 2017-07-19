@@ -1,5 +1,10 @@
 Meteor.methods({
 
+    deleteAnswer: function(answerId) {
+
+        Answers.remove(answerId);
+
+    },
     sendNotification(data) {
 
         if (Integrations.findOne({ type: 'puremetrics' })) {
@@ -31,9 +36,11 @@ Meteor.methods({
         Surveys.remove(surveyId);
 
     },
-    editSurvey: function(title, subtitle, language, surveyId) {
+    editSurvey: function(surveyData) {
 
-        Surveys.update(surveyId, {$set: {language: language, title: title, subtitle: subtitle}});
+        console.log(surveyData);
+
+        Surveys.update(surveyData._id, { $set: surveyData });
 
     },
     createSurvey: function(survey) {
@@ -69,6 +76,17 @@ Meteor.methods({
 
         console.log(answer);
         Answers.insert(answer);
+
+    },
+    validateApiKey: function(key) {
+
+        var adminUser = Meteor.users.findOne({ apiKey: { $exists: true } });
+
+        if (adminUser.apiKey == key) {
+            return true;
+        } else {
+            return false;
+        }
 
     },
     generateApiKey: function() {
